@@ -25,7 +25,23 @@ int main(){
 		}cout << endl;
 	}
 
-
+	// 3 - pyramid
+	for (int i = 1; i <= n; ++i)
+	{
+		// Print leading spaces
+		for (int j = 0; j < n - i; ++j)
+		{
+			// cout << "#";
+			cout << " ";
+		}
+		// Print asterisks
+		for (int k = 0; k < (2 * i - 1); ++k)
+		{
+			cout << "*";
+		}
+		// Move to the next line
+		cout << endl;
+	}
 
 	return 0;
 }
