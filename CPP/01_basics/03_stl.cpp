@@ -3,6 +3,7 @@
 #include <unordered_map>
 #include <stack>
 #include <queue>
+#include <deque>
 #include <algorithm>
 using namespace std;
 
@@ -138,6 +139,26 @@ void all_queue(){
 	cout << "Back - " << q.back() << endl;
 }
 
+void printDeque(deque<int> dq){
+	while(!dq.empty()){
+		cout << dq.front() << " ";
+		dq.pop_front();
+	}
+}
+
+void all_deque(){
+	deque<int> dq;
+	for (int i = 1; i <= 5; i++)
+	{
+		dq.push_front(i);
+	}
+	for (int i = 6; i <= 10; i++)
+	{
+		dq.push_back(i);
+	}
+	printDeque(dq);
+}
+
 int main(){
 	// Vector
 	// all_vector();
@@ -149,7 +170,8 @@ int main(){
 	// all_stack();
 
 	// Queue - Deque
-	all_queue();
+	// all_queue();
+	all_deque();
 
 	return 0;
 }
