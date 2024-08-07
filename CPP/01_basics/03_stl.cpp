@@ -2,6 +2,7 @@
 #include <vector>
 #include <unordered_map>
 #include <stack>
+#include <queue>
 #include <algorithm>
 using namespace std;
 
@@ -118,6 +119,25 @@ void all_stack(){
 	cout << st.top() << endl;
 }
 
+void printQueue(queue<int> q){
+	while(!q.empty()){
+		cout << q.front() << " ";
+		q.pop();
+	}cout << endl;
+}
+
+void all_queue(){
+	queue<int> q;
+	for (int i=1; i<=5; i++){
+		q.push(i);
+	}
+	printQueue(q);
+	// -- front 
+	cout << "Front - " << q.front() << endl;
+	// -- back
+	cout << "Back - " << q.back() << endl;
+}
+
 int main(){
 	// Vector
 	// all_vector();
@@ -126,7 +146,10 @@ int main(){
 	// all_map();
 
 	// Stack
-	all_stack();
+	// all_stack();
+
+	// Queue - Deque
+	all_queue();
 
 	return 0;
 }
