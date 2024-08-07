@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <unordered_map>
+#include <stack>
 #include <algorithm>
 using namespace std;
 
@@ -94,12 +95,38 @@ void all_map(){
 	printMap(mp);
 }
 
+void printStack(stack<int> st){
+	while(!st.empty()){
+		cout << st.top() << " ";
+		st.pop();
+	}
+	cout << endl;
+}
+
+void all_stack(){
+	stack<int> st;
+	// push
+	st.push(1);
+	st.push(2);
+	st.push(3);
+	// print
+	printStack(st);
+	// pop
+	st.pop();
+	printStack(st);
+	// top
+	cout << st.top() << endl;
+}
+
 int main(){
 	// Vector
 	// all_vector();
 
 	// Map
-	all_map();
+	// all_map();
+
+	// Stack
+	all_stack();
 
 	return 0;
 }
