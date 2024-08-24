@@ -10,6 +10,7 @@ public class InputOutput {
 		float weight;
 		String petName;
 		String fullName;
+		boolean married;
 		
 		// input int - nextInt()
 		System.out.println("Enter age - ");
@@ -27,6 +28,17 @@ public class InputOutput {
 		
 		System.out.println("Enter Full name - ");
 		fullName = scanner.nextLine();
+		
+		// input boolean - nextBoolean()
+		System.out.println("Are you married? (true/false) - ");
+		married = scanner.nextBoolean();
+				
+		// Output the inputs
+		System.out.println("Age: " + age);
+		System.out.println("Weight: " + weight);
+		System.out.println("Pet Name: " + petName);
+		System.out.println("Full Name: " + fullName);
+		System.out.println("Married: " + married);
 		
 		scanner.close();
 	}
