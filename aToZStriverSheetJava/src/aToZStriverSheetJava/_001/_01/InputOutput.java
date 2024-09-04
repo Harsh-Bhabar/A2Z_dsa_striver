@@ -1,4 +1,4 @@
-package aToZStriverSheetJava;
+package aToZStriverSheetJava._001._01;
 
 import java.util.Scanner;
 
