@@ -3,7 +3,7 @@ package aToZStriverSheetJava._001._02_Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-public class ListInterface_Hashset {
+public class SetInterface_Hashset {
     public static void main(String[] args){
 
         Set<Integer> set = new HashSet<>(); // random order O(1)
