@@ -2,7 +2,7 @@ package aToZStriverSheetJava._001._02_Collections;
 
 import java.util.Objects;
 
-public class Student {
+public class Student implements Comparable<Student>{
     String name;
     int rollNo;
 
@@ -29,6 +29,11 @@ public class Student {
             return false;
         Student student = (Student) o;
         return rollNo == student.rollNo;
+    }
+
+    @Override
+    public int compareTo(Student that) {
+        return this.rollNo - that.rollNo; // we can sort by using name too - Comparable
     }
 
 }
