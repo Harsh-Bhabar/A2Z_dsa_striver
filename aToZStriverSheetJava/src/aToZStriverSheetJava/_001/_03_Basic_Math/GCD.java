@@ -2,6 +2,8 @@ package aToZStriverSheetJava._001._03_Basic_Math;
 
 import java.util.Arrays;
 
+//link - https://leetcode.com/problems/find-greatest-common-divisor-of-array/
+
 public class GCD {
 
     public int findGCD(int[] nums) {
