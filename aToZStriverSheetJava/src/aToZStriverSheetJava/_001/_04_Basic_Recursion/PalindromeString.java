@@ -1,5 +1,7 @@
 package aToZStriverSheetJava._001._04_Basic_Recursion;
 
+// link - https://leetcode.com/problems/valid-palindrome/description/
+
 public class PalindromeString {
 
     public static boolean isPalindrome(String s, int start, int end){
@@ -14,7 +16,17 @@ public class PalindromeString {
     }
 
     public static void main(String[] args){
-        String str = "harshsrah";
-        System.out.println("is it - ? " + isPalindrome(str, 0, str.length()-1));
+        String str = "A man, a plan, a canal: Panama"; // amanaplanacanalpanama
+
+        StringBuilder sb = new StringBuilder();
+
+        for(char c: str.toCharArray()){
+            if(Character.isLetterOrDigit(c)){
+                sb.append(Character.toLowerCase(c));
+            }
+        }
+
+        String newStr = sb.toString();
+        System.out.println("is it - ? " + isPalindrome(newStr, 0, newStr.length()-1));
     }
 }
