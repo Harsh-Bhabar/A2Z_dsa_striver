@@ -1,5 +1,8 @@
 package aToZStriverSheetJava._002_Sorting;
 
+//Time - O(n^2)
+//Space - O(n^2)
+
 public class BubbleSort {
     public static void main(String[] args){
         int[] nums = {1, 5, 6, 6, 2, 0};

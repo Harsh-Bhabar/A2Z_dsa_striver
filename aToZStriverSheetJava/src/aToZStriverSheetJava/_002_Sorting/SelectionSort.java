@@ -2,6 +2,9 @@ package aToZStriverSheetJava._002_Sorting;
 
 //link - https://leetcode.com/problems/sort-an-array/
 
+// Time - O n^2
+// Space - O n^2
+
 public class SelectionSort {
     public static void main(String[] args){
         int[] nums = {3, 4, 5, 1, 2};
