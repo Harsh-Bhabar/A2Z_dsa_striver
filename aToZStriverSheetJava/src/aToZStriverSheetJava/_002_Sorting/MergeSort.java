@@ -1,70 +1,67 @@
 package aToZStriverSheetJava._002_Sorting;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class MergeSort {
 
-    public static void mergeSort(int l, int r, int[] nums){
-        if(l < r){
-            int mid = l + (r-l)/2;
-            // sort first and second half
-            mergeSort(l, mid, nums);
-            mergeSort(mid+1, r, nums);
-            // merge sorted halves
-            merge(l, mid, r, nums);
+    public static void mergeSort(int[] nums, int left, int right){
+        if(left >= right){
+            return;
         }
+        int mid = left + (right-left)/2;
+        mergeSort(nums, left, mid);
+        mergeSort(nums, mid+1, right);
+
+        merge(nums, left, mid, right);
     }
 
-    public static void merge(int l, int mid, int r, int[] nums){
-        // sizes of subarrays to be merged
-        int n1 = mid - l + 1;
-        int n2 = r - mid;
-
-        // create temp arrays
-        int[] left = new int[n1];
-        int[] right = new int[n2];
-
-        // copy data
-        for(int i=0; i<n1; i++){
-            left[i] = nums[l+i];
+    public static void printArray(int[] nums){
+        for(int x: nums){
+            System.out.print(x + " ");
         }
-        for(int i=0; i<n2; i++){
-            right[i] = nums[mid+1 + i];
-        }
+        System.out.println();
+    }
 
-        // merge the two temp array
-        int i=0, j=0;
-        int k = l; // initial index of merged subarray
+    public static void merge(int[] nums, int low, int mid, int high){
 
-        while (i < n1 && j < n2){
-            if(left[i] <= right[j]) {
-                nums[k] = left[i];
-                i++;
-            } else{
-                nums[k] = right[j];
-                j++;
+        List<Integer> temp = new ArrayList<>();
+        int left = low;
+        int right = mid + 1;
+
+        while(left <= mid && right <= high){
+            if(nums[left] <= nums[right]){
+                temp.add(nums[left]);
+                left++;
             }
-            k++;
+            else{
+                temp.add(nums[right]);
+                right++;
+            }
         }
 
-        // copy remaining elements
-        while(i < n1){
-            nums[k] = left[i];
-            i++;
-            k++;
+        while(left <= mid){
+            temp.add(nums[left]);
+            left++;
         }
-        while(j < n2){
-            nums[k] = right[j];
-            j++;
-            k++;
+
+        while(right <= high){
+            temp.add(nums[right]);
+            right++;
         }
+
+        for(int i=low; i<=high; i++){
+            nums[i] = temp.get(i-low);
+        }
+//        printArray(nums);
+//        System.out.println("Low " + low + " MID " + mid + " high " + high);
     }
 
     public static void main(String[] args){
-        int[] nums = {1,4, 5, 2, 7, 3, 6};
+        int[] nums = {4, 5, 2, 1, 7, 3, 6};
 
-        mergeSort(0, nums.length-1, nums);
-
+        mergeSort(nums, 0, nums.length-1);
         System.out.print(Arrays.toString(nums));
     }
 }
