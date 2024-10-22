@@ -1,6 +1,6 @@
 package aToZStriverSheetJava._002_Sorting;
 
-public class BubbleSortRecursion {
+public class BubbleSortRecursive {
 
     public static void RecursiveBubbleSort(int[] nums, int n){
         if(n==1){
