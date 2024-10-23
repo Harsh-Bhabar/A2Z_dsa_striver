@@ -1,5 +1,7 @@
 package aToZStriverSheetJava._003_Arrays.Easy;
 
+//link - https://leetcode.com/problems/move-zeroes/
+
 public class MoveZerosToEnd {
     public void moveZeroes(int[] nums) {
         int n = nums.length;
