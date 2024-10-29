@@ -1,5 +1,7 @@
 package aToZStriverSheetJava._003_Arrays.Medium;
 
+//link - https://leetcode.com/problems/sort-colors/description/
+
 public class Sort_0_1_2 {
     public static void swap(int[] nums, int i, int j){
         int temp = nums[i];

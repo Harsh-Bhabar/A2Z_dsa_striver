@@ -2,6 +2,8 @@ package aToZStriverSheetJava._003_Arrays.Medium;
 
 import java.util.Arrays;
 
+//link - https://leetcode.com/problems/next-permutation/description/
+
 public class NextPermutation {
 
     public void swap(int[] nums, int i, int j){
