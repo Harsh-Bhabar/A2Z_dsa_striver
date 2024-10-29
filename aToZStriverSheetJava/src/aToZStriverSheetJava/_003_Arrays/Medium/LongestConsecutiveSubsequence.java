@@ -2,6 +2,8 @@ package aToZStriverSheetJava._003_Arrays.Medium;
 
 import java.util.HashMap;
 
+//link - https://leetcode.com/problems/longest-consecutive-sequence/description/
+
 public class LongestConsecutiveSubsequence {
     public int longestConsecutive(int[] nums) {
         if(nums.length <= 1){
