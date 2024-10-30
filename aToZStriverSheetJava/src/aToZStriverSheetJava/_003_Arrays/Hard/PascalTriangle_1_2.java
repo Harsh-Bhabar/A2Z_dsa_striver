@@ -2,9 +2,11 @@ package aToZStriverSheetJava._003_Arrays.Hard;
 
 import java.util.*;
 
-public class PascalTriangle {
+//link - https://leetcode.com/problems/pascals-triangle/
 
-    // way - 1 - Brute force
+public class PascalTriangle_1_2 {
+
+    // PRINT - way - 1 - Brute force
 
     public int findPascalTriValue(int r, int c){
         // there's a formula (r-1) C (c-1) to find value
@@ -31,6 +33,25 @@ public class PascalTriangle {
         return ans;
     }
 
-    // way - 2 - Optimal
+    // PRINT - way - 2 - Optimal
+
+
+
+    // GET ROW
+    public List<Integer> getRow(int rowIndex) {
+        List<Integer> ans = new ArrayList<>();
+        int row = rowIndex + 1;
+        long colValue = 1;
+
+        ans.add((int) colValue);
+
+        for(int i=1; i<row; i++){
+            colValue = colValue * (row - i);
+            colValue = colValue / i;
+            ans.add((int) colValue);
+        }
+
+        return ans;
+    }
 
 }
