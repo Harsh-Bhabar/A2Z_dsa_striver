@@ -4,7 +4,7 @@ import java.util.*;
 
 //link - https://leetcode.com/problems/pascals-triangle/
 
-public class PascalTriangle_1_2 {
+public class PascalTriangle_1_2_3 {
 
     // PRINT - way - 1 - Brute force - O(n * n * n)
 
