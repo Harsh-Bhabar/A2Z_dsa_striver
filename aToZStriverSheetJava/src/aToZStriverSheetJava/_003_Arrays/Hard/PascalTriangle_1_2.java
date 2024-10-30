@@ -6,7 +6,7 @@ import java.util.*;
 
 public class PascalTriangle_1_2 {
 
-    // PRINT - way - 1 - Brute force
+    // PRINT - way - 1 - Brute force - O(n * n * n)
 
     public int findPascalTriValue(int r, int c){
         // there's a formula (r-1) C (c-1) to find value
@@ -33,9 +33,31 @@ public class PascalTriangle_1_2 {
         return ans;
     }
 
-    // PRINT - way - 2 - Optimal
+    // PRINT - way - 2 - Optimal - O (n * n)
 
+    public List<Integer> getPascalRow(int r){
+        List<Integer> ans = new ArrayList<>();
+        long colVal = 1;
+        ans.add((int) colVal);
 
+        for(int i=1; i<r; i++){
+            colVal = colVal * (r - i);
+            colVal = colVal / i;
+            ans.add((int) colVal);
+        }
+
+        return ans;
+    }
+
+    public List<List<Integer>> generate(int numRows) {
+        List<List<Integer>> ans = new ArrayList<>();
+
+        for(int i=1; i<=numRows; i++){ // O(n)
+            ans.add(getPascalRow(i)); // O(n)
+        }
+
+        return ans;
+    }
 
     // GET ROW
     public List<Integer> getRow(int rowIndex) {
