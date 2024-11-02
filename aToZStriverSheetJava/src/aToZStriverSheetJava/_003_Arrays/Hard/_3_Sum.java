@@ -4,7 +4,7 @@ import java.util.*;
 
 //link - https://leetcode.com/problems/3sum/description/
 
-public class _3Sum {
+public class _3_Sum {
     class Solution {
         public List<List<Integer>> threeSum(int[] nums) {
             List<List<Integer>> ans = new ArrayList<>();

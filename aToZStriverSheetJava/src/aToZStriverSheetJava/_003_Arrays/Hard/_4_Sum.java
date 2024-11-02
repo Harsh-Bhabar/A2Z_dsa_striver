@@ -4,7 +4,7 @@ package aToZStriverSheetJava._003_Arrays.Hard;
 
 import java.util.*;
 
-public class _4Sum {
+public class _4_Sum {
     class Solution {
         public List<List<Integer>> fourSum(int[] nums, int target) {
             int n = nums.length;
