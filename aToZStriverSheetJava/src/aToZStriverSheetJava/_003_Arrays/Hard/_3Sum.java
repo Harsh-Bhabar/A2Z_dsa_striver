@@ -2,6 +2,8 @@ package aToZStriverSheetJava._003_Arrays.Hard;
 
 import java.util.*;
 
+//link - https://leetcode.com/problems/3sum/description/
+
 public class _3Sum {
     class Solution {
         public List<List<Integer>> threeSum(int[] nums) {
