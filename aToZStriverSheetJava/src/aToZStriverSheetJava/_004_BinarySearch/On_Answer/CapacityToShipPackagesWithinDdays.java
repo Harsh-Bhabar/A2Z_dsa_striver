@@ -22,13 +22,8 @@ public class CapacityToShipPackagesWithinDdays {
 
     public int shipWithinDays(int[] weights, int days) {
 
-        int totalWeight = 0;
-        for(int x: weights){
-            totalWeight += x;
-        }
-
         int l = Arrays.stream(weights).max().orElse(1);
-        int r = totalWeight;
+        int r = Arrays.stream(weights).sum();
         int ans = -1;
 
         while(l <= r){
