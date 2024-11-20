@@ -1,6 +1,8 @@
 package aToZStriverSheetJava._006_LinkedList.Easy;
 
 import aToZStriverSheetJava._006_LinkedList.Node;
+
+import static aToZStriverSheetJava._006_LinkedList.Node.lengthOfLL;
 import static aToZStriverSheetJava._006_LinkedList.Node.printLL;
 
 public class Insert {
@@ -34,5 +36,7 @@ public class Insert {
         head = list.insertAtHead(head, -3);
 
         printLL(head);
+
+        System.out.println("LEN - " + lengthOfLL(head));
     }
 }
