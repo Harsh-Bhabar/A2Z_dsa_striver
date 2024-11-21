@@ -5,7 +5,7 @@ import aToZStriverSheetJava._006_LinkedList.Node;
 import static aToZStriverSheetJava._006_LinkedList.Node.lengthOfLL;
 import static aToZStriverSheetJava._006_LinkedList.Node.printLL;
 
-public class Insert {
+public class Insert_front_back {
     public Node insertAtEnd(Node head, int x){
         Node newNode = new Node(x);
         if(head == null){
@@ -26,7 +26,7 @@ public class Insert {
     }
 
     public static void main(String[] args){
-        Insert list = new Insert();
+        Insert_front_back list = new Insert_front_back();
         Node head = null;
         head = list.insertAtEnd(head, 1);
         head = list.insertAtEnd(head, 2);

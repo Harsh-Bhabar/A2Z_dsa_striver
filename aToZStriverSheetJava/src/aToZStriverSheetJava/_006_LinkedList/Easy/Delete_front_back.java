@@ -2,9 +2,8 @@ package aToZStriverSheetJava._006_LinkedList.Easy;
 
 import aToZStriverSheetJava._006_LinkedList.Node;
 import static aToZStriverSheetJava._006_LinkedList.Node.printLL;
-import aToZStriverSheetJava._006_LinkedList.Easy.Insert;
 
-public class Delete {
+public class Delete_front_back {
     public Node deleteAtEnd(Node head){
         if(head == null){
             return head;
@@ -36,7 +35,7 @@ public class Delete {
     }
 
     public static void main(String[] args){
-        Insert list = new Insert();
+        Insert_front_back list = new Insert_front_back();
         Node head = null;
         head = list.insertAtEnd(head, 1);
         head = list.insertAtEnd(head, 2);
@@ -44,7 +43,7 @@ public class Delete {
 
         printLL(head);
 
-        Delete d = new Delete();
+        Delete_front_back d = new Delete_front_back();
 
         head = d.deleteAtEnd(head);
         printLL(head);
