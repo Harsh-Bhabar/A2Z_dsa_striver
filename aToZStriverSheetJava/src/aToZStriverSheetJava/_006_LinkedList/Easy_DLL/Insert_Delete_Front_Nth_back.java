@@ -66,6 +66,56 @@ public class Insert_Delete_Front_Nth_back {
         return head;
     }
 
+    public static DLLNode deleteAtFront(DLLNode head){
+        if(head == null || head.next == null){
+            return null;
+        }
+        return head.next;
+    }
+
+    public static DLLNode deleteAtEnd(DLLNode head){
+        if(head == null || head.next == null){
+            return null;
+        }
+        DLLNode temp = head;
+        while(temp.next != null){
+            temp = temp.next;
+        }
+        temp.prev.next = null;
+        return head;
+    }
+
+    public static DLLNode deleteNthNode(DLLNode head, int n){
+        if(head == null || n <= 0){
+            return head;
+        }
+        if(n == 1){
+            return deleteAtFront(head);
+        }
+        DLLNode temp = head;
+        int cnt = 1;
+        while(temp != null && cnt < n){
+            temp = temp.next;
+            cnt++;
+        }
+
+        if(temp == null){
+            return head;
+        }
+
+        if(temp.next == null){
+            return deleteAtEnd(head);
+        }else{
+            DLLNode next2next = temp.next.next;
+            temp.next = next2next;
+            if(next2next != null){
+                next2next.prev = temp;
+            }
+        }
+
+        return head;
+    }
+
     public static void printDLL(DLLNode head){
         while(head != null){
             System.out.print(head.val + " ");
@@ -92,8 +142,15 @@ public class Insert_Delete_Front_Nth_back {
         head = insertAtNthPlace(head,  new DLLNode(100), 20);
         printDLL(head);
 
+        head = deleteAtFront(head);
+        printDLL(head);
 
+        head = deleteAtEnd(head);
+        head = deleteAtEnd(head);
+        printDLL(head);
 
+        head = deleteNthNode(head, 4);
+        printDLL(head);
 
     }
 }
