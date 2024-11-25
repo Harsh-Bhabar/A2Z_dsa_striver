@@ -116,6 +116,23 @@ public class Insert_Delete_Front_Nth_back {
         return head;
     }
 
+    public static DLLNode reverseDLL(DLLNode head){
+        if(head == null || head.next == null){
+            return head;
+        }
+        DLLNode prevNode = null;
+        DLLNode curr = head;
+        while(curr != null){
+            DLLNode nextNode = curr.next;
+            curr.next = prevNode;
+            curr.prev = nextNode;
+            prevNode = curr;
+            curr = nextNode;
+        }
+
+        return prevNode;
+    }
+
     public static void printDLL(DLLNode head){
         while(head != null){
             System.out.print(head.val + " ");
@@ -150,6 +167,11 @@ public class Insert_Delete_Front_Nth_back {
         printDLL(head);
 
         head = deleteNthNode(head, 4);
+        printDLL(head);
+
+        head = reverseDLL(head);
+        printDLL(head);
+        head = reverseDLL(head);
         printDLL(head);
 
     }
