@@ -4,7 +4,7 @@ import aToZStriverSheetJava._006_LinkedList.ListNode;
 
 //link - https://leetcode.com/problems/intersection-of-two-linked-lists/
 
-public class Intersection {
+public class IntersectionOfTwoLL {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         if(headA == null || headB == null){
             return null;
