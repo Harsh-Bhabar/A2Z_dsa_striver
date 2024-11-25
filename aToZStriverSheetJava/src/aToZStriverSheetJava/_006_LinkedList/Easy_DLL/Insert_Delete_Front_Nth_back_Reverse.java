@@ -5,7 +5,7 @@ import aToZStriverSheetJava._006_LinkedList.DLLNode;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Insert_Delete_Front_Nth_back {
+public class Insert_Delete_Front_Nth_back_Reverse {
 
     public static DLLNode makeDLLFromArr(ArrayList<Integer> nums){
         DLLNode dummy = new DLLNode(-1);
