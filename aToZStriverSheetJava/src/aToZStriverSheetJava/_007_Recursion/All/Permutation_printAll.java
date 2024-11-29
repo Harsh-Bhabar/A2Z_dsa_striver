@@ -4,7 +4,7 @@ import java.util.*;
 
 //link - https://leetcode.com/problems/permutations/
 
-public class Permutations {
+public class Permutation_printAll {
  // way - 1
     List<List<Integer>> ans = new ArrayList<>();
 
