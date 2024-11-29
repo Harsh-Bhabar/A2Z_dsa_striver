@@ -1,6 +1,6 @@
 package aToZStriverSheetJava._007_Recursion.All;
 
-public class validSudoku {
+public class Sudoku_ableToFill {
         public boolean solve(char[][] board){
             for(int i=0; i<9; i++){
                 for(int j=0; j<9; j++){
