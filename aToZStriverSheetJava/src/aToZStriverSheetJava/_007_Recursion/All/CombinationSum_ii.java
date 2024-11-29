@@ -1,4 +1,4 @@
-package aToZStriverSheetJava._007_Recursion.Subsequence;
+package aToZStriverSheetJava._007_Recursion.All;
 
 import java.util.*;
 
