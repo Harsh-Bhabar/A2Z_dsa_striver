@@ -4,7 +4,7 @@ import java.util.*;
 
 //link - https://leetcode.com/problems/find-k-closest-elements/
 
-public class K_ClosestElem {
+public class K_Closest {
     public List<Integer> findClosestElements(int[] nums, int k, int x) {
         PriorityQueue<int[]> maxHeap = new PriorityQueue<>(
                 (a,b) -> b[0] != a[0] ? b[0]-a[0] : b[1]-a[1]
