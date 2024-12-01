@@ -4,7 +4,7 @@ import java.util.*;
 
 //link - https://leetcode.com/problems/next-greater-element-i/
 
-public class NextGreaterElement_right {
+public class NearestGreater_toRight {
     public List<Integer> nextGreaterEle(int[] nums){
         int n = nums.length;
         List<Integer> ans = new ArrayList<>();

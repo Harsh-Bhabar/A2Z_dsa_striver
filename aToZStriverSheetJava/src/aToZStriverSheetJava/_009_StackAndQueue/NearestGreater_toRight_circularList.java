@@ -4,7 +4,7 @@ import java.util.Stack;
 
 //link - https://leetcode.com/problems/next-greater-element-ii/
 
-public class NextGreaterElement_circularList {
+public class NearestGreater_toRight_circularList {
     public int[] nextGreaterElements(int[] nums) {
         int n = nums.length;
         Stack<Integer> st = new Stack<>();
