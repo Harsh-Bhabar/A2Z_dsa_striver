@@ -2,6 +2,7 @@ package aToZStriverSheetJava._010_BinaryTree;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 public class Traversal_preorder {
 
@@ -23,5 +24,26 @@ public class Traversal_preorder {
     }
 
     // iterative
+    public List<Integer> preorderTraversal_iterative(TreeNode root) {
+        List<Integer> ans = new ArrayList<>();
+        if(root == null){
+            return ans;
+        }
 
+        Stack<TreeNode> st = new Stack<>();
+        st.push(root);
+
+        while(!st.isEmpty()){
+            TreeNode curr = st.pop();
+            ans.add(curr.val);
+            if(curr.right != null){
+                st.push(curr.right);
+            }
+            if(curr.left != null){
+                st.push(curr.left);
+            }
+        }
+
+        return ans;
+    }
 }
