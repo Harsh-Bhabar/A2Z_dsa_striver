@@ -2,7 +2,7 @@ package aToZStriverSheetJava._010_BinaryTree;
 
 import java.util.*;
 
-public class Left_view {
+public class View_Left {
     ArrayList<Integer> leftView(TreeNode root) {
         ArrayList<Integer> ans = new ArrayList<>();
 
