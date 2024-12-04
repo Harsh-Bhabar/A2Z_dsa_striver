@@ -23,5 +23,28 @@ public class Traversal_postorder {
 
     // iterative
 
+    public List<Integer> postorderTraversal_iterative(TreeNode root) {
+        List<Integer> ans = new ArrayList<>();
+        if(root == null){
+            return ans;
+        }
+
+        Stack<TreeNode> st = new Stack<>();
+        st.push(root);
+
+        while(!st.isEmpty()){
+            TreeNode curr = st.pop();
+            ans.add(curr.val);
+            if(curr.left != null){
+                st.push(curr.left);
+            }
+            if(curr.right != null){
+                st.push(curr.right);
+            }
+        }
+
+        Collections.reverse(ans);
+        return ans;
+    }
 
 }
