@@ -25,5 +25,29 @@ public class Traversal_inorder {
 
     // iterative
 
+    public List<Integer> inorderTraversal_iterative(TreeNode root) {
+        List<Integer> ans = new ArrayList<>();
+        if(root == null){
+            return ans;
+        }
+
+        Stack<TreeNode> st = new Stack<>();
+        TreeNode curr = root;
+
+        while(curr != null || !st.isEmpty()){
+            while(curr != null){
+                st.push(curr);
+                curr = curr.left;
+            }
+
+            TreeNode temp = st.pop();
+            ans.add(temp.val);
+
+            curr = temp.right;
+        }
+
+        return ans;
+    }
+
 
 }
