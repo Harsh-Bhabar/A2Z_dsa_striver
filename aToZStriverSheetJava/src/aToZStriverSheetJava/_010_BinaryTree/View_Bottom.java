@@ -4,7 +4,7 @@ import java.util.*;
 
 public class View_Bottom {
 
-    class Pair{
+    static class Pair{
         int hd;
         TreeNode TreeNode ;
         Pair(TreeNode TreeNode, int hd){
@@ -33,10 +33,10 @@ public class View_Bottom {
             mp.put(hd, curr.val);
 
             if(curr.left != null){
-                q.offer(new Pair(curr.left, hd-1));
+                q.offer(new Pair(curr.left, hd - 1));
             }
             if(curr.right != null){
-                q.offer(new Pair(curr.right, hd+1));
+                q.offer(new Pair(curr.right, hd + 1));
             }
         }
 
