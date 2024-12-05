@@ -2,7 +2,7 @@ package aToZStriverSheetJava._010_BinaryTree;
 
 import java.util.*;
 
-public class Traversal_postorder {
+public class Traversal_POSTorder {
     // recusrive
 
     List<Integer> ans = new ArrayList<>();

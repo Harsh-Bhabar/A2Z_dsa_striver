@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-public class Traversal_preorder {
+public class Traversal_PREorder {
 
     // recursive
     List<Integer> ans = new ArrayList<>();

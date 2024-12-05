@@ -4,7 +4,7 @@ import java.util.*;
 
 //link - https://leetcode.com/problems/binary-tree-inorder-traversal/
 
-public class Traversal_inorder {
+public class Traversal_INorder {
     // recursive
     List<Integer> ans = new ArrayList<>();
 

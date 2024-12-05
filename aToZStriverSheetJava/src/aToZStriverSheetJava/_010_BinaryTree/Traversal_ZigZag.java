@@ -4,7 +4,7 @@ import java.util.*;
 
 //link - https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/
 
-public class Traversal_zigZag {
+public class Traversal_ZigZag {
     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
         List<List<Integer>> ans = new ArrayList<>();
         if(root == null){
