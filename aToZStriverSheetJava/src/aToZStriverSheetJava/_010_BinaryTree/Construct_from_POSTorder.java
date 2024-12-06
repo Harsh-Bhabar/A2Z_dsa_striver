@@ -4,7 +4,7 @@ package aToZStriverSheetJava._010_BinaryTree;
 
 import java.util.*;
 
-public class Contruct_from_POSTorder {
+public class Construct_from_POSTorder {
 
     Map<Integer, Integer> postorderMap = new HashMap<>();
     int postPos;
