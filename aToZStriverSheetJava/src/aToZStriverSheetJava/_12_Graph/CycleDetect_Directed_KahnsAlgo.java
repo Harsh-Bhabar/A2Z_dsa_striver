@@ -2,38 +2,31 @@ package aToZStriverSheetJava._12_Graph;
 
 import java.util.*;
 
-//link - https://leetcode.com/problems/course-schedule/
+//link - https://www.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=practice_card
 
 public class CycleDetect_Directed_KahnsAlgo {
+    public boolean isCyclic(int V, ArrayList<ArrayList<Integer>> adj) {
 
-    List<List<Integer>> adj = new ArrayList<>();
-    int[] indegree;
-
-    public void getAdjAndIndegree(int[][] prereqs){
-        for(int[] nums: prereqs){
-            adj.get(nums[1]).add(nums[0]);
-            indegree[nums[0]]++;
+        int[] indegree = new int[V];
+        for(int i=0; i<V; i++){
+            for(int ad: adj.get(i)){
+                indegree[ad]++;
+            }
         }
-    }
-
-    public boolean canFinish(int numCourses, int[][] prerequisites) {
-        indegree = new int[numCourses];
-        for(int i=0; i<numCourses; i++){
-            adj.add(new ArrayList<>());
-        }
-        getAdjAndIndegree(prerequisites);
 
         Queue<Integer> q = new LinkedList<>();
-        for(int i=0; i<numCourses; i++){
+
+        for(int i=0; i<V; i++){
             if(indegree[i] == 0){
                 q.offer(i);
             }
         }
 
-        List<Integer> ans = new ArrayList<>();
+        int cnt = 0;
+
         while(!q.isEmpty()){
             int curr = q.poll();
-            ans.add(curr);
+            cnt++;
 
             for(int neigh: adj.get(curr)){
                 indegree[neigh]--;
@@ -43,7 +36,6 @@ public class CycleDetect_Directed_KahnsAlgo {
             }
         }
 
-        return ans.size() == numCourses;
-
+        return cnt != V;
     }
 }
