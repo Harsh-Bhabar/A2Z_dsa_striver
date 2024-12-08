@@ -2,7 +2,7 @@ package aToZStriverSheetJava._12_Graph;
 
 //link - https://leetcode.com/problems/number-of-islands/
 
-public class Number_of_Island {
+public class Number_of_Island_DFS {
     public void DFS(char[][] grid, int i, int j){
         if(i >= 0 && i < grid.length && j >= 0 && j < grid[0].length && grid[i][j] == '1'){
             grid[i][j] = '2';
