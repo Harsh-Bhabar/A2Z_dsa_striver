@@ -2,9 +2,11 @@ package aToZStriverSheetJava._13_DP;
 
 import java.util.Arrays;
 
-public class Frog_jump {
+public class _1D_Frog_jump {
     static int[] dp ;
 
+
+    // memorization
     public static int solve(int n, int[] heights){
         if(n == 0){
             return 0;
@@ -25,5 +27,24 @@ public class Frog_jump {
         dp = new int[n];
         Arrays.fill(dp, -1);
         return solve(n-1, heights);
+    }
+
+    // DP
+    public static int frogJump_dp(int n, int heights[]) {
+        dp = new int[n];
+        Arrays.fill(dp, -1);
+        dp[0] = 0;
+
+        for(int i=1; i<n; i++){
+            int one = dp[i-1] + Math.abs(heights[i]-heights[i-1]);
+            int second = Integer.MAX_VALUE;
+            if(i > 1){
+                second = dp[i-2] + Math.abs(heights[i] - heights[i-2]);
+            }
+
+            dp[i] = Math.min(one, second);
+        }
+
+        return dp[n-1];
     }
 }

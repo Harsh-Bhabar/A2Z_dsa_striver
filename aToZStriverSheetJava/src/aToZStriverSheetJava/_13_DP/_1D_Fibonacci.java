@@ -2,7 +2,7 @@ package aToZStriverSheetJava._13_DP;
 
 import java.util.Arrays;
 
-public class Fibonacci {
+public class _1D_Fibonacci {
 
     // memorize - bottom-up
     int[] dp;
