@@ -4,7 +4,7 @@ import java.util.*;
 
 //link - https://www.geeksforgeeks.org/problems/shortest-path-in-undirected-graph/1
 
-public class Shortest_path_DAG_topo {
+public class Shortest_path_from_src_DAG_topo {
     class Pair{
         int node;
         int weight;
