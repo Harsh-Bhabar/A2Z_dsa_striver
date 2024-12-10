@@ -42,4 +42,24 @@ public class Fibonacci {
 
         return dp[n];
     }
+
+    // even more optimized
+
+
+    public int fib_3(int n) {
+        if(n <= 1){
+            return n;
+        }
+
+        int prev2 = 0;
+        int prev = 1;
+
+        for(int i=2; i<=n; i++){
+            int curr = prev2 + prev;
+            prev2 = prev;
+            prev = curr;
+        }
+
+        return prev;
+    }
 }
