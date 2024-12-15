@@ -2,7 +2,7 @@ package aToZStriverSheetJava._13_DP;
 
 //link - https://leetcode.com/problems/partition-equal-subset-sum/
 
-public class _SS_Partition_equal_sum_ss_check {
+public class _SS_Partition_equal_sum_ss_CHECK {
 //     -------- DP
 
     boolean[][] dp ;

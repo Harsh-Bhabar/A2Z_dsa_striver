@@ -2,7 +2,7 @@ package aToZStriverSheetJava._13_DP;
 
 //https://www.naukri.com/code360/problems/count-subsets-with-sum-k_3952532?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf&leftPanelTabValue=SUBMISSION
 
-public class _SS_count_ss_with_sum_k {
+public class _SS_Subset_sum_equals_k_COUNT {
 
     static int MOD = 1_000_000_007;
 
@@ -22,7 +22,7 @@ public class _SS_count_ss_with_sum_k {
 
         // Fill the DP table
         for (int i = 1; i < n; i++) {
-            for (int j = 0; j <= k; j++) {
+            for (int j = 0; j <= k; j++) { // FROM J == 0
                 long notTaken = dp[i - 1][j]; // Case where current element is not taken
                 long taken = 0;
                 if (nums[i] <= j) {
