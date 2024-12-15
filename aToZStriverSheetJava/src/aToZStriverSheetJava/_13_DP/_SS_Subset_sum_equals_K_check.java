@@ -1,5 +1,7 @@
 package aToZStriverSheetJava._13_DP;
 
+//link - https://www.geeksforgeeks.org/problems/subset-sum-problem-1611555638/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=practice_card
+
 public class _SS_Subset_sum_equals_K_check {
 
 //    ---- recursion
