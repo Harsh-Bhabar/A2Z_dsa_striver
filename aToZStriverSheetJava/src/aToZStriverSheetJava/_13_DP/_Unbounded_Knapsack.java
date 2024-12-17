@@ -1,14 +1,14 @@
 package aToZStriverSheetJava._13_DP;
 
+//link - https://www.geeksforgeeks.org/problems/knapsack-with-duplicate-items4201/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=practice_card
+
 import java.util.Arrays;
 
 public class _Unbounded_Knapsack {
 
 //    ----- recursion
 
-
     static int[][] dp;
-
     static int solve(int i, int cap, int[] val, int[] wt){
         if(i==0){
             return ( cap / wt[0] ) * val[0];
