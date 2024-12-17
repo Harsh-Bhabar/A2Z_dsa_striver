@@ -4,7 +4,7 @@ package aToZStriverSheetJava._13_DP;
 
 import java.util.Arrays;
 
-public class _LCS_Length {
+public class _LC_SS_Length {
 //    ----- recursion
     int[][] dp ;
     public int solve(int i, int j, String text1, String text2){

@@ -2,7 +2,7 @@ package aToZStriverSheetJava._13_DP;
 
 import java.util.Arrays;
 
-public class _LCS_Print {
+public class _LC_SS_Print {
 
     public int longestCommonSubsequence(String text1, String text2) {
         int n1 = text1.length();
