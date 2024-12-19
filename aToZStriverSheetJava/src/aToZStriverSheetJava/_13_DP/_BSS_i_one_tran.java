@@ -1,6 +1,6 @@
 package aToZStriverSheetJava._13_DP;
 
-public class _BSS_one_day {
+public class _BSS_i_one_tran {
     public int maxProfit(int[] prices) {
         int maxAns = 0;
         int min = Integer.MAX_VALUE;
