@@ -2,7 +2,7 @@ package aToZStriverSheetJava._010_BinaryTree;
 
 //link - https://leetcode.com/problems/balanced-binary-tree/
 
-public class Balanced_BT {
+public class  Balanced_BT {
     public int height(TreeNode root){
         if(root == null){
             return 0;

@@ -9,36 +9,45 @@ import java.util.Collections;
 public class _LIS_Best_Print {
 
     public ArrayList<Integer> longestIncreasingSubsequence(int n, int nums[]) {
-        int[] dp = new int[n];
-        int[] hash = new int[n];
+        // Array to store the length of the LIS ending at each index
+        int[] lisLengths = new int[n];
+        // Array to store the previous index of the LIS for backtracking
+        int[] previousIndex = new int[n];
 
-        Arrays.fill(dp, 0);
-        int maxi = 0;
-        int lastIndex = 0;
+        // Initialize LIS lengths to 1 (each element is a subsequence of length 1)
+        Arrays.fill(lisLengths, 1);
+        int maxLength = 1;
+        int endIndex = 0; // Index of the last element in the longest increasing subsequence
 
-        for(int i=0; i<n; i++){
-            hash[i] = i;
-            for(int prev=0; prev<i; prev++){
-                if(nums[prev] < nums[i] && 1 + dp[prev] > dp[i]){
-                    dp[i] = 1 + dp[prev];
-                    hash[i] = prev;
+        // Build the LIS using dynamic programming
+        for (int i = 0; i < n; i++) {
+            previousIndex[i] = i; // Initially point to itself
+            for (int j = 0; j < i; j++) {
+                if (nums[j] < nums[i] && lisLengths[j] + 1 > lisLengths[i]) {
+                    lisLengths[i] = lisLengths[j] + 1;
+                    previousIndex[i] = j; // Update the previous index for LIS
                 }
             }
-            if(dp[i] > maxi){
-                maxi = dp[i];
-                lastIndex = i;
+            // Update the maximum length and its end index
+            if (lisLengths[i] > maxLength) {
+                maxLength = lisLengths[i];
+                endIndex = i;
             }
         }
 
-        ArrayList<Integer> ans = new ArrayList<>();
-        ans.add(nums[lastIndex]);
-        while(hash[lastIndex] != lastIndex){
-            lastIndex = hash[lastIndex];
-            ans.add(nums[lastIndex]);
+        // Reconstruct the longest increasing subsequence
+        ArrayList<Integer> result = new ArrayList<>();
+        int currentIndex = endIndex;
+        while (previousIndex[currentIndex] != currentIndex) {
+            result.add(nums[currentIndex]);
+            currentIndex = previousIndex[currentIndex];
         }
+        result.add(nums[currentIndex]); // Add the first element of the LIS
 
-        Collections.reverse(ans);
+        // Reverse the result to get the correct order
+        Collections.reverse(result);
 
-        return ans;
+        return result;
     }
+
 }
