@@ -1,6 +1,8 @@
 package aToZStriverSheetJava._13_DP;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 public class _LIS_Best_Len {
 //    -------- n^2  + n
@@ -22,6 +24,33 @@ public class _LIS_Best_Len {
         }
 
         return maxi;
+    }
+
+
+//    ------ Binary Search
+
+
+    public int lengthOfLIS_BS(int[] nums) {
+        ArrayList<Integer> lis = new ArrayList<>();
+
+        for (int num : nums) {
+            // Find the position where `num` can be inserted
+            int pos = Collections.binarySearch(lis, num);
+
+            // If the number is not found, binarySearch returns (-(insertion point) - 1)
+            if (pos < 0) {
+                pos = -(pos + 1);
+            }
+
+            // If pos == size of lis, append num, otherwise replace the element at pos
+            if (pos == lis.size()) {
+                lis.add(num);
+            } else {
+                lis.set(pos, num);
+            }
+        }
+
+        return lis.size();
     }
 
 }
