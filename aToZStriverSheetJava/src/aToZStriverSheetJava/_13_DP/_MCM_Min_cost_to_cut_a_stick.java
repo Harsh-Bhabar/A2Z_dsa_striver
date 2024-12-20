@@ -2,6 +2,8 @@ package aToZStriverSheetJava._13_DP;
 
 import java.util.*;
 
+//link - https://leetcode.com/problems/minimum-cost-to-cut-a-stick/description/
+
 public class _MCM_Min_cost_to_cut_a_stick {
 
 //    --- recursion
