@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 //link - https://www.geeksforgeeks.org/problems/matrix-chain-multiplication0303/1
 
-public class _MCM_min_steps {
+public class _MCM_classic {
 //    ---- recursion
     static int[][] dp;
 
