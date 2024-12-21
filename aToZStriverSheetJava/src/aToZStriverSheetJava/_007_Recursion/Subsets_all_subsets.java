@@ -4,7 +4,7 @@ import java.util.*;
 
 //link - https://leetcode.com/problems/subsets/
 
-public class Subsets {
+public class Subsets_all_subsets {
     List<List<Integer>> ans = new ArrayList<>();
 
     public void helper(int i, int[] nums, List<Integer> temp){
