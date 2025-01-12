@@ -3,51 +3,53 @@ package aToZStriverSheetJava._13_DP;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 
 //link - https://www.geeksforgeeks.org/problems/printing-longest-increasing-subsequence/0
 
 public class _LIS_Best_Print {
 
-    public ArrayList<Integer> longestIncreasingSubsequence(int n, int nums[]) {
-        // Array to store the length of the LIS ending at each index
-        int[] lisLengths = new int[n];
-        // Array to store the previous index of the LIS for backtracking
-        int[] previousIndex = new int[n];
+    public List<Integer> lexicographicallySmallestLIS(int n, int[] arr) {
+        // dp[i] stores the length of LIS ending at index i
+        int[] dp = new int[n];
+        // prev[i] stores the previous index in the LIS ending at index i
+        int[] prev = new int[n];
+        Arrays.fill(dp, 1);
+        Arrays.fill(prev, -1);
 
-        // Initialize LIS lengths to 1 (each element is a subsequence of length 1)
-        Arrays.fill(lisLengths, 1);
-        int maxLength = 1;
-        int endIndex = 0; // Index of the last element in the longest increasing subsequence
-
-        // Build the LIS using dynamic programming
+        // Build the LIS dynamically
         for (int i = 0; i < n; i++) {
-            previousIndex[i] = i; // Initially point to itself
             for (int j = 0; j < i; j++) {
-                if (nums[j] < nums[i] && lisLengths[j] + 1 > lisLengths[i]) {
-                    lisLengths[i] = lisLengths[j] + 1;
-                    previousIndex[i] = j; // Update the previous index for LIS
+                if (arr[i] > arr[j] && dp[i] < dp[j] + 1) {
+                    dp[i] = dp[j] + 1;
+                    prev[i] = j;
+                }
+                // For lexicographical order, if lengths are same, choose smaller index
+                else if (arr[i] > arr[j] && dp[i] == dp[j] + 1 && prev[i] > j) {
+                    prev[i] = j;
                 }
             }
-            // Update the maximum length and its end index
-            if (lisLengths[i] > maxLength) {
-                maxLength = lisLengths[i];
-                endIndex = i;
+        }
+
+        // Find the index of the maximum LIS length
+        int maxLength = 0, lastIndex = 0;
+        for (int i = 0; i < n; i++) {
+            if (dp[i] > maxLength) {
+                maxLength = dp[i];
+                lastIndex = i;
             }
         }
 
-        // Reconstruct the longest increasing subsequence
-        ArrayList<Integer> result = new ArrayList<>();
-        int currentIndex = endIndex;
-        while (previousIndex[currentIndex] != currentIndex) {
-            result.add(nums[currentIndex]);
-            currentIndex = previousIndex[currentIndex];
+        // Reconstruct the LIS
+        List<Integer> lis = new ArrayList<>();
+        while (lastIndex != -1) {
+            lis.add(arr[lastIndex]);
+            lastIndex = prev[lastIndex];
         }
-        result.add(nums[currentIndex]); // Add the first element of the LIS
 
-        // Reverse the result to get the correct order
-        Collections.reverse(result);
-
-        return result;
+        // The LIS is constructed in reverse order
+        Collections.reverse(lis);
+        return lis;
     }
 
 }
