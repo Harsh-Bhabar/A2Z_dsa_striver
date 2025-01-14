@@ -2,7 +2,7 @@ package aToZStriverSheetJava._006_LinkedList;
 
 //link - https://leetcode.com/problems/remove-nth-node-from-end-of-list/
 
-public class Delete_Nth {
+public class Remove_Nth_node_from_last {
     public ListNode removeNthFromEnd(ListNode head, int n) {
 
         if(head == null || head.next == null){

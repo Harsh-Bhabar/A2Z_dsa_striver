@@ -2,7 +2,7 @@ package aToZStriverSheetJava._006_LinkedList;
 
 //link - https://leetcode.com/problems/linked-list-cycle-ii/
 
-public class Detect_Loop_StartPoint {
+public class Cycle_StartPoint {
     public ListNode detectCycle(ListNode head) {
         if(head == null || head.next == null){
             return null;

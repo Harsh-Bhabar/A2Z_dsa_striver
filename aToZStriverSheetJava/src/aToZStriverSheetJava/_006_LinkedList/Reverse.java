@@ -2,7 +2,7 @@ package aToZStriverSheetJava._006_LinkedList;
 
 //link - https://leetcode.com/problems/reverse-linked-list/
 
-public class Reverse_iterative {
+public class Reverse {
     public ListNode reverseList(ListNode head) {
         if(head == null || head.next == null){
             return head;

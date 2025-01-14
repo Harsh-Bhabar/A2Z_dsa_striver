@@ -1,6 +1,6 @@
 package aToZStriverSheetJava._006_LinkedList;
 
-public class Detect_Loop {
+public class Cycle_detect {
     public boolean hasCycle(ListNode head) {
         if(head == null || head.next == null){
             return false;
