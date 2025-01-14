@@ -2,7 +2,7 @@ package aToZStriverSheetJava._006_LinkedList;
 
 //link - https://leetcode.com/problems/swap-nodes-in-pairs/
 
-public class SwapNodesInPair {
+public class Swap_Nodes_In_Pair {
     public ListNode swapPairs(ListNode head) {
 
         ListNode dummy = new ListNode(0);
