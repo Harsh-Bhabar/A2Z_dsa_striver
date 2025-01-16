@@ -2,7 +2,7 @@ package aToZStriverSheetJava._010_BinaryTree;
 
 //link -https://leetcode.com/problems/maximum-depth-of-binary-tree/
 
-public class Depth_or_Height {
+public class Height {
     public int maxDepth(TreeNode root) {
         if(root == null){
             return 0;
